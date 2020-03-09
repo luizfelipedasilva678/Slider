@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+
+        #conteudo{
+            padding: 30px 0px;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Exercícios HTML 
+    </header>
+    
+    <br>
+    
+    <nav>
+        <a href="exercicios/teste.html">Exercícios</a><br>
+        <a href="exercicios/temp.html">Texto 2</a><br>
+        <a href="exercicios/tags.html">Tags HTML</a><br>
+        <a href="exercicios/lista.html">Listas</a><br>
+        <a href="exercicios/lista_alinhada.html">Lista Alinhada</a><br>
+        <a href="exercicios/tabelas.html">Tabelas</a><br>
+        <a href="exercicios/formulario.html">Formulário</a><br>
+        <a href="exercicios/imagens.html">Imagens</a>
+    </nav>
+    
+    <hr>
+    <section id="conteudo">
+
+    </section>
+    <hr>
+
+    <footer>
+        Curso de Web Moderno
+    </footer>
+
+    <script>
+       (function(){
+            var $links = document.querySelectorAll('a');
+            $links.forEach(function(e){
+                e.addEventListener('click', function(e){
+                    e.preventDefault();
+                    var  xhr = new XMLHttpRequest();
+                    var link = e.target.href;
+                    xhr.open('GET', link);
+                    xhr.send(null);
+                    xhr.onreadystatechange = verificaAjax;
+
+                    function verificaAjax(){
+                        if(xhr.readyState === 4){
+                            if(xhr.status === 200 || xhr.status === 304){
+                                let resposta = xhr.responseText;
+                                var content = document.querySelector('#conteudo');
+                                content.innerHTML = resposta;
+                            } else {
+                                alert('deu ruim na resposta');
+                                console.log(xhr);
+                            }   
+                        }
+                    }
+                })
+            })
+       })();
+    </script>
+</body>
+</html>

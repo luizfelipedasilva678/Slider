@@ -1,0 +1,49 @@
+<h1>Lista Alinhada</h1>
+
+<style>
+    #back ul{
+        display: none;
+    }
+
+    #back:hover ul{
+        display: block;
+    }
+
+    #back #sublista ul{
+        display:  none;
+    }
+
+    #back  #sublista:hover ul{
+        display:  block;
+    }
+
+    #back #outralista ul{
+        display:  none;
+    }
+
+    #back #outralista:hover ul{
+        display:  block;
+    }
+</style>
+
+<ul>
+    <li id="back">Backend
+        <ul>
+            <li id="sublista">App
+                <ul>
+                    <li>Produto.js</li>
+                    <li>Produto.js</li>
+                    <li>Produto.js</li>
+                </ul>
+            </li>
+            <li>Backend</li>
+            <li id="outralista">
+                Config
+                <ul>
+                    <li>App.config</li>
+                    <li>App.config</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>

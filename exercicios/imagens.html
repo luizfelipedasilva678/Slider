@@ -1,0 +1,59 @@
+<h1>Imagens</h1>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<style>
+    #slider{
+        display: flex;
+        width: 400px;
+        height: 300px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        border: solid grey 3px;
+    }
+  
+   
+
+
+</style>
+
+<div>
+    <div id="slider">
+        <img class="img" src="imagem1.jpg"  width="400" height="300">
+    </div>
+
+</div>
+
+
+<script>  
+    var imagens = [
+        'imagem3.jpg',
+        'imagem2.jpg',
+        'imagem1.jpg'
+    ];
+
+    var $img = document.querySelector('.img');
+    var i=0;
+    
+    setInterval(function(){
+        $img.src = imagens[i];
+        
+        if(i < imagens.length -1){
+            console.log(imagens.length-1);
+            i++;
+        }else{
+            i = 0;
+        }
+    }, 7000)
+    
+    /*
+    setInterval(function(){
+        $img.src = imagens[i];
+        if(i < imagens.length -1){
+            i++;
+        }else{
+            i = 0;
+        }
+    }, 2000)
+    */
+ 
+</script>
